@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # Parse command-line arguments.
 
     if len(sys.argv) != 5:
-        print('Syntax: <direction> <czech.h path> <input C file path> <output Č file path>')
+        print('Syntax: <direction> <easternslovak.h path> <input C file path> <output DZ file path>')
         exit(1)
 
     direction = sys.argv[1]
@@ -26,8 +26,8 @@ if __name__ == '__main__':
 
     if direction not in [FLAG_TO, FLAG_FROM]:
         print('Valid directions:')
-        print('  to   -- From English to Czech')
-        print('  from -- From Czech to English')
+        print('  to   -- From English to Eastern Slovak')
+        print('  from -- From Eastern Slovak to English')
         exit(1)
 
     try:

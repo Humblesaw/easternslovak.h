@@ -1,12 +1,9 @@
 /*
-   ▀█▄▄█▀
-    ▄▄▄▄
-  ██▀▀▀▀█
- ██▀
- ██
- ██▄
-  ██▄▄▄▄█
-    ▀▀▀▀
+██████  ███████
+██   ██    ███
+██   ██   ███
+██   ██  ███
+██████  ███████
 */
 // typy
 #define SOUBOR FILE
@@ -20,8 +17,8 @@
 #define dvojitý double
 #define dvojitá double
 #define dvojité double
-#define číslo int
-#define cel int // INTeger -> CELé číslo
+#define cifra int
+#define cal int // INTeger -> CALa cifra
 #define znak char
 #define dlouhý long
 #define dlouhá long
@@ -45,27 +42,27 @@
 #define nijaký void
 #define nijaká void
 #define nijaké void
-#define prázdnota void
+#define praznota void
 #define pravdivost bool
 
 // pokročilé celočíselné typy
 #define velikost_t size_t
-#define číslo8_t int8_t
-#define číslo16_t int16_t
-#define číslo32_t int32_t
-#define číslo64_t int64_t
-#define nčíslo8_t uint8_t
-#define nčíslo16_t uint16_t
-#define nčíslo32_t uint32_t
-#define nčíslo64_t uint64_t
-#define cel8_t int8_t
-#define cel16_t int16_t
-#define cel32_t int32_t
-#define cel64_t int64_t
-#define ncel8_t uint8_t
-#define ncel16_t uint16_t
-#define ncel32_t uint32_t
-#define ncel64_t uint64_t
+#define cifra8_t int8_t
+#define cifra16_t int16_t
+#define cifra32_t int32_t
+#define cifra64_t int64_t
+#define ncifra8_t uint8_t
+#define ncifra16_t uint16_t
+#define ncifra32_t uint32_t
+#define ncifra64_t uint64_t
+#define cal8_t int8_t
+#define cal16_t int16_t
+#define cal32_t int32_t
+#define cal64_t int64_t
+#define ncal8_t uint8_t
+#define ncal16_t uint16_t
+#define ncal32_t uint32_t
+#define ncal64_t uint64_t
 
 // další datové typy
 #define výčet enum
@@ -129,7 +126,8 @@
 #define pokračuj continue
 
 // ostatní klíčová slova
-#define vrať return
+#define vrac return
+#define vracšezos return
 #define navrať return
 #define jdido goto
 #define velikost(x) sizeof(x)
@@ -139,7 +137,7 @@
 #define stop ;
 #define vole ;
 
-#define hlavní main
+#define perša main
 
 // operátory
 #define je ==
@@ -233,9 +231,9 @@
 #define sznovuotevři(x, y, z) freopen(x, y, z)
 #define nastavmísto(x, y) setbuf(x, y)
 #define přenastavmísto(x, y, z, a) setvbuf(x, y, z, a)
-#define stisknif(...) fprintf(__VA_ARGS__)
+#define svycišnif(...) fprintf(__VA_ARGS__)
 #define sčtif(...) fscanf(__VA_ARGS__)
-#define tisknif(...) printf(__VA_ARGS__)
+#define vycišnif(...) printf(__VA_ARGS__)
 #define čtif(...) scanf(__VA_ARGS__)
 
 // <stdlib.h> - <spnkni.h>
@@ -271,16 +269,16 @@
 #define odejít(x) exit(x)
 
 // místo délka tisk formát
-#define mdtisknif(...) snprintf(__VA_ARGS__)
-#define mtisknif(...) sprintf(__VA_ARGS__)
+#define mdvycišnif(...) snprintf(__VA_ARGS__)
+#define mvycišnif(...) sprintf(__VA_ARGS__)
 #define mčtif(...) sscanf(__VA_ARGS__)
 // proměnný souborový tisk formátovaný
-#define pstisknif(...) vfprintf(__VA_ARGS__)
+#define psvycišnif(...) vfprintf(__VA_ARGS__)
 #define psčtif(...) vfscanf(__VA_ARGS__)
-#define ptisknif(...) vprintf(__VA_ARGS__)
+#define pvycišnif(...) vprintf(__VA_ARGS__)
 #define pčtif(...) vscanf(__VA_ARGS__)
-#define pmdtisknif(...) vsnprintf(__VA_ARGS__)
-#define pmtisknif(...) vsprintf(__VA_ARGS__)
+#define pmdvycišnif(...) vsnprintf(__VA_ARGS__)
+#define pmvycišnif(...) vsprintf(__VA_ARGS__)
 #define pmčtif(...) vsscanf(__VA_ARGS__)
 #define sdostaňz(x) fgetc(x)
 #define sdostaňř(x, y, z) fgets(x, y, z)
@@ -415,7 +413,7 @@
 #define jemenší(x, y) isless(x, y)
 #define jemenšírovno(x, y) islessequal(x, y)
 #define jemenšívětší(x, y) islessgreater(x, y)
-#define jenečíslo(x) isnan(x)
+#define jenecifra(x) isnan(x)
 #define jenormální(x) isnormal(x)
 #define jeneřaditelné(x, y) isunordered(x, y)
 #define znaménkovýbit(x) signbit(x)
@@ -428,7 +426,7 @@
 #define OBŘÍ_HODP HUGE_VALF
 #define OBŘÍ_HODD HUGE_VALL
 #define NEKONEČNO INFINITY
-#define NEČÍSLO NAN
+#define NECIFRA NAN
 #define PČ_NEKONEČNÉ FP_INFINITE
 #define PČ_NEČÍSLO FP_NAN
 #define PČ_NORMÁLNÍ FP_NORMAL
@@ -550,14 +548,11 @@
 #define SIGPOPL SIGALRM  // signál poplach
 
 /*
-   ▀█▄▄█▀
-    ▄▄▄▄
-  ██▀▀▀▀█
- ██▀          ██        ██
- ██        ▄▄▄██▄▄▄  ▄▄▄██▄▄▄
- ██▄       ▀▀▀██▀▀▀  ▀▀▀██▀▀▀
-  ██▄▄▄▄█     ██        ██
-    ▀▀▀▀
+██████  ███████
+██   ██    ███     ██        ██
+██   ██   ███   ▄▄▄██▄▄▄  ▄▄▄██▄▄▄
+██   ██  ███    ▀▀▀██▀▀▀  ▀▀▀██▀▀▀
+██████  ███████    ██        ██
 */
 // c -> character -> znak -> z
 #define zven cout

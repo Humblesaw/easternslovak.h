@@ -1,8 +1,7 @@
-#include "../czech.h"
+#include "../easternslovak.h"
 #include <stdio.h>
 
-číslo hlavní(prázdno)
-{
-    položř("Ahoj, světe!");
-    vrať 0;
+cifra perša( praznota ) {
+    vycišnif( "PanBohpozdrav švet, ta ňe?\n" );
+    vracšezos 0;
 }
